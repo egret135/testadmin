@@ -1,33 +1,43 @@
 <template>
-  <el-container style="height: 100%" direction="vertical">
-    <ElHeader />
-    <el-container direction="horizontal">
-      <el-aside width="200px">Aside</el-aside>
-      <el-main>
-        <router-view/>
-      </el-main>
+  <div id="app">
+    <el-container style="height: 100%" direction="vertical">
+      <ElHeader />
+      <el-container direction="horizontal">
+        <ElAside />
+        <ElMain />
+      </el-container>
     </el-container>
-  </el-container>
+  </div>
 </template>
 
 <script>
+  import ElHeader from './components/Layout/ElHeader'
+  import ElAside from './components/Layout/ElAside'
+  import ElMain from './components/Layout/ElMain'
+
   export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      ElHeader,
+      ElAside,
+      ElMain
+    },
   }
 </script>
 
+<style lang="less" rel="stylesheet/less">
+  @import "./styles/reset.less";
+</style>
+
 <style>
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333333;
-  }
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333333;
-  }
-  * {
+  body {
     margin: 0;
-    padding: 0;
+  }
+  #app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
   }
 </style>

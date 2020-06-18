@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElHeader from './components/ElHeader'
 
 import ElementUI from 'element-ui'
+import ElHeader from './components/Layout/ElHeader'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
+// Vue.use(ElHeader)
 
 Vue.config.productionTip = false
 
@@ -22,3 +23,5 @@ new Vue({
   },
   template: '<App/>'
 })
+
+// Vue.component('eheader', ElHeader)
